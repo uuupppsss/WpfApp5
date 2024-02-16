@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfApp5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid DataContext="{Binding ProjectOptions}">
+        <TabControl>
+            
+            <TabItem Header="TextSettings">
+                <StackPanel>
+                    <Label Content="Font Family" />
+                    <ComboBox x:Name="FontFamily_List" SelectedItem="{Binding FontName}"/>
+                    <Label Content="Font Size"/>
+                    <TextBox Text="{Binding FontSize}"/>
+                    <Label Content="Font Colour"/>
+                    <TextBox Text="{Binding FontColour}"/>
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="SoundSettings">
+                <StackPanel>
+                    <Label Content="Sound device"/>
+                    <ComboBox SelectedItem="{Binding SelectedDevice}">
+                        <ComboBoxItem Content="a"/>
+                        <ComboBoxItem Content="b"/>
+                        <ComboBoxItem Content="c"/>
+                        <ComboBoxItem Content="d"/>
+                    </ComboBox>
+                    <Label Content="Surround sound"/>
+                    <CheckBox IsChecked="{Binding IsVolumeOn}"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="DataSettings">
+                <StackPanel>
+                    <Label Content="Server"/>
+                    <TextBox Text="{Binding Server}"/>
+                    <Label Content="Data Base Name"/>
+                    <TextBox Text="{Binding DataBaseName}"/>
+                    <Label Content="Username"/>
+                    <TextBox Text="{Binding Username}"/>
+                    <Label Content="Password"/>
+                    <TextBox Text="{Binding Password}"/>
+                    <Button Content="TEST"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
